@@ -59,7 +59,7 @@ function App() {
   }, [sidebarVisible]);
 
   return (
-    <div id='main-container'>
+    <div id='app'>
       <NavBar
         loggedInUser={loggedInUser}
         handleLogout={handleLogout}
@@ -68,7 +68,13 @@ function App() {
       <Notification message={message} setMessage={setMessage} />
       <div id='main-page'>
         <SideBar sidebarVisible={sidebarVisible} />
-        <div style={{ height: 'var(--main-height)', marginLeft: mainMargin, width: mainWidth }}>
+        <div
+          style={{
+            height: 'var(--main-height)',
+            marginLeft: mainMargin,
+            width: mainWidth,
+          }}
+        >
           <Routes>
             <Route path='/' element={<Home loggedInUser={loggedInUser} />} />
             {loggedInUser ? (

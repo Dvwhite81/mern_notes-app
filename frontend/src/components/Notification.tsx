@@ -1,4 +1,5 @@
-import { Container } from 'react-bootstrap';
+import { useEffect } from 'react';
+import '../styles/Notification.css';
 
 interface NotificationProps {
   message: string | null
@@ -12,15 +13,23 @@ const Notification = ({ message, setMessage }: NotificationProps) => {
     }
   };
 
+  useEffect(() => {
+    if (message) {
+      setTimeout(() => {
+        hide();
+      }, 2000);
+    }
+  });
+
   if (message === null) return;
 
   return (
-    <Container fluid id='notification-modal'>
+    <div id='notification-modal'>
       <span className='modal-close' onClick={hide}>
         x
       </span>
       <p>{message}</p>
-    </Container>
+    </div>
   );
 };
 

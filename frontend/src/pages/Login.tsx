@@ -48,7 +48,6 @@ const Login = ({ setLoggedInUser, setMessage }: LoginProps) => {
 
   return (
     <div className='page login-page'>
-      <h2>Login</h2>
       <form className='user-form' onSubmit={handleSubmit}>
         <FormInput
           label='Username'
@@ -64,7 +63,7 @@ const Login = ({ setLoggedInUser, setMessage }: LoginProps) => {
         />
         <button type='submit' className='btn'>Log In</button>
       </form>
-      <p className='text-center'>
+      <p className='center'>
         Don't have an account? <Link to='/register'>Sign up</Link>
       </p>
     </div>

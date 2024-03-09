@@ -29,10 +29,6 @@
   height: calc(var(--navbar-height) - 1vh);
 }
 
-#main-logo:hover {
-  transform: scale(1.2);
-}
-
 .navbar-icon {
   height: calc(var(--navbar-height) - 5vh);
 }

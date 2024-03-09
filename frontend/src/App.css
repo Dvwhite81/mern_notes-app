@@ -7,35 +7,54 @@
   --light-text: whitesmoke;
 }
 
-#main-container {
+/* Outer wrapper */
+#app {
   display: grid;
   grid-template-rows: var(--navbar-height) var(--min-main-height);
   height: 100%;
   padding: 0;
 }
 
+/* All Pages */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: var(--min-main-height);
+}
+
 #main-page {
   display: flex;
 }
 
-.icon, .logo {
+/* General / Globals */
+.center {
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.icon:hover,
+.logo:hover,
+.btn:hover,
+a:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
 
 a {
   color: var(--light-text);
+  display: flex;
+  height: 100%;
   text-decoration: none;
-}
-
-input {
-  padding: 5px 10px !important;
 }
 
 .btn {
   background-color: var(--dark-bg);
+  border: none;
+  border-radius: 10px;
   color: var(--light-text);
-  margin: 0 auto !important;
-  padding: 5px 10px !important;
+  padding: 5px 10px;
   width: fit-content;
 }
 
@@ -44,57 +63,25 @@ input {
   color: var(--dark-bg);
 }
 
-.save-btn {
-  position: absolute;
-  right: 0;
-  top: 1.5rem;
-}
-
+/* Forms */
 .user-form {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin: 1rem;
+  gap: 1rem;
+  margin: 2rem auto;
+  width: fit-content;
 }
 
-#logout-btn {
-  background-color: var(--dark-bg);
-  border-radius: 10px;
-  position: absolute;
-  right: 1vh;
-  top: calc(var(--navbar-height) + 1vh);
-}
-
-#notification-modal {
+label.form-label {
   align-items: center;
-  background: linear-gradient(to top, black, lightgray);
-  border-radius: 5px;
-  color: var(--light-text);
-  display: grid;
-  height: 25%;
-  left: 50%;
-  top: 50%;
-  overflow: auto;
-  position: fixed;
-  text-align: center;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  z-index: 1;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
 }
 
-.modal-close {
-  color: var(--light-text);
-  font-size: 28px;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  right: 5px;
-}
-
-.modal-close:hover,
-.modal-close:focus {
-  color: var(--dark-bg);
-  text-decoration: none;
-  cursor: pointer;
+input {
+  padding: 5px 10px !important;
 }

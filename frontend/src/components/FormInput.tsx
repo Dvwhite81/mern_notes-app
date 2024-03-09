@@ -1,5 +1,3 @@
-import { FormControl, FormLabel } from 'react-bootstrap';
-
 interface FormInputProps {
   label: string
   type: string
@@ -9,14 +7,14 @@ interface FormInputProps {
 
 const FormInput = ({ label, type, value, setValue }: FormInputProps) => {
   return (
-    <FormLabel>
+    <label className='form-label'>
       {label}:
-      <FormControl
+      <input
         type={type}
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-    </FormLabel>
+    </label>
   );
 };
 

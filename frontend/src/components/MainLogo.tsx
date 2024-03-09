@@ -5,7 +5,7 @@ const MainLogo = () => {
   return (
     <div id='main-logo-container'>
       <Link to='/'>
-        <img id='main-logo' src={NotesLogo} alt='main notes logo' />
+        <img id='main-logo' className='logo' src={NotesLogo} alt='main notes logo' />
       </Link>
     </div>
   );
