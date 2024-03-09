@@ -1,20 +1,18 @@
-import { useState } from 'react';
-import { Navbar, NavDropdown } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserType } from '../utils/types';
 import LogoutBtn from './LogoutBtn';
-import DropdownMenu from './DropdownMenu';
+import MainLogo from './MainLogo';
+import MenuIcon from '../assets/images/white-menu-icon.png';
+import '../styles/NavBar.css';
 
 interface NavBarProps {
-  loggedInUser: UserType | null
-  handleLogout: () => void
+  loggedInUser: UserType | null;
+  handleLogout: () => void;
+  toggleSidebar: () => void;
 }
 
-const NavBar = ({ loggedInUser, handleLogout }: NavBarProps) => {
-  const [isVisible, setIsVisible] = useState(false);
+const NavBar = ({ loggedInUser, handleLogout, toggleSidebar }: NavBarProps) => {
   const navigate = useNavigate();
-
-  const handleVisibleClick = () => setIsVisible((prev) => !prev);
 
   const handleLogoutClick = () => {
     handleLogout();
@@ -22,34 +20,25 @@ const NavBar = ({ loggedInUser, handleLogout }: NavBarProps) => {
   };
 
   return (
-    <Navbar
-      bg='dark'
-      data-bs-theme='dark'
-      className='h-100 mx-0 d-flex p-2 rounded'
-    >
-      {loggedInUser ? (
-        <Link to='/profile'>Profile</Link>
-      ) : (
-        <Link to='/register'>Sign Up</Link>
-      )}
-      <NavDropdown
-        style={{
-          color: 'whitesmoke',
-          margin: 'auto',
-          width: 'fit-content',
-        }}
-        title='Categories'
-        onClick={handleVisibleClick}
-      >
-        {isVisible && <DropdownMenu handleClick={handleVisibleClick} />}
-      </NavDropdown>
-      {loggedInUser ? (
-        <Link to='/saved'>Saved</Link>
-      ) : (
-        <Link to='/login'>Log In</Link>
-      )}
-      {loggedInUser && <LogoutBtn handleLogout={handleLogoutClick} />}
-    </Navbar>
+    <nav id='navbar'>
+      <div className='left navbar-left'>
+        {loggedInUser ? (
+          <img
+            className='icon navbar-icon'
+            src={MenuIcon}
+            alt='menu icon'
+            onClick={toggleSidebar}
+          />
+        ) : (
+          <Link to='/register'>Sign Up</Link>
+        )}
+      </div>
+      <MainLogo />
+      <div className='right navbar-right'>
+        {!loggedInUser && <Link to='/login'>Log In</Link>}
+        {loggedInUser && <LogoutBtn handleLogout={handleLogoutClick} />}
+      </div>
+    </nav>
   );
 };
 

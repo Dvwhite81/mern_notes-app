@@ -1,0 +1,38 @@
+#navbar {
+  align-items: center;
+  background-color: var(--dark-bg);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: var(--navbar-height);
+}
+
+#navbar div {
+  align-items: center;
+  display: flex;
+}
+
+.left {
+  justify-content: left;
+  margin-left: 1rem;
+}
+
+.right {
+  justify-content: right;
+  margin-right: 1rem;
+}
+
+#main-logo-container {
+  justify-content: center;
+}
+
+#main-logo {
+  height: calc(var(--navbar-height) - 1vh);
+}
+
+#main-logo:hover {
+  transform: scale(1.2);
+}
+
+.navbar-icon {
+  height: calc(var(--navbar-height) - 5vh);
+}

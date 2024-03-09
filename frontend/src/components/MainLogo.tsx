@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import NotesLogo from '../assets/images/white-notes-logo.png';
 
 const MainLogo = () => {
   return (
-    <div style={{ height: 'var(--navbar-height)', margin: '0 auto', width: 'fit-content' }}>
-      <Link to='/' style={{ height: '100%', width: '100%' }}>
-        <img id='main-logo' src='/recipes-logo.png' alt='main recipes logo' />
+    <div id='main-logo-container'>
+      <Link to='/'>
+        <img id='main-logo' src={NotesLogo} alt='main notes logo' />
       </Link>
     </div>
   );

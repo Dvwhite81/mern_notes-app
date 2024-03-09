@@ -25,7 +25,7 @@ authRouter.post('/register', async (req, res) => {
     username: user.username,
     password: user.password,
     token: '',
-    recipes: [],
+    notes: [],
   });
 
   await newUser.save();
@@ -62,6 +62,7 @@ authRouter.post('/login', async (req, res) => {
     username: userExists.username,
   };
 
+  console.log('secret:', process.env.JWT_SECRET);
   jwt.sign(
     payload,
     process.env.JWT_SECRET,
@@ -93,7 +94,7 @@ authRouter.get('/getUser', verifyJWT, (req, res) => {
     success: true,
     isLoggedIn: true,
     username: req.user.username,
-    recipes: req.user.recipes,
+    notes: req.user.notes,
   });
 });
 

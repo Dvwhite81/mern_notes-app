@@ -3,6 +3,8 @@
   --navbar-height: 10vh;
   --main-height: 90%;
   --min-main-height: 90vh;
+  --sidebar-width: 25vw;
+  --light-text: whitesmoke;
 }
 
 #main-container {
@@ -12,52 +14,34 @@
   padding: 0;
 }
 
-.dropdown-menu[data-bs-popper].show {
-  left: 50%;
-  transform: translate(-50%, 5%);
+#main-page {
+  display: flex;
 }
 
-.grid-container {
-  display: grid;
-  gap: 5vw;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 0 auto !important;
-  width: 90vw;
+.icon, .logo {
+  cursor: pointer;
 }
 
 a {
-  color: whitesmoke;
+  color: var(--light-text);
   text-decoration: none;
-}
-
-.card {
-  text-align: center;
-}
-
-.card-header {
-  display: flex;
-  height: 15vh;
-  padding-bottom: 1rem!important;
-}
-
-img.card-img-top {
-  align-self: center;
-  width: 50%;
-  object-fit: scale-down;
-}
-
-.pad-left {
-  padding-left: 20px !important;
 }
 
 input {
   padding: 5px 10px !important;
 }
 
-button {
+.btn {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
   margin: 0 auto !important;
   padding: 5px 10px !important;
   width: fit-content;
+}
+
+.btn:hover {
+  background-color: var(--light-text);
+  color: var(--dark-bg);
 }
 
 .save-btn {
@@ -75,34 +59,18 @@ button {
 }
 
 #logout-btn {
-  background-color: black;
+  background-color: var(--dark-bg);
   border-radius: 10px;
   position: absolute;
   right: 1vh;
   top: calc(var(--navbar-height) + 1vh);
 }
 
-#logout-btn:hover {
-  background-color: whitesmoke;
-  color: black;
-}
-
-#main-logo {
-  height: 100%;
-  margin: 0 auto;
-  width: fit-content;
-}
-
-#main-logo:hover {
-  background-color: var(--dark-bg);
-  transform: scale(1.2);
-}
-
 #notification-modal {
   align-items: center;
   background: linear-gradient(to top, black, lightgray);
   border-radius: 5px;
-  color: whitesmoke;
+  color: var(--light-text);
   display: grid;
   height: 25%;
   left: 50%;
@@ -116,7 +84,7 @@ button {
 }
 
 .modal-close {
-  color: whitesmoke;
+  color: var(--light-text);
   font-size: 28px;
   font-weight: bold;
   position: absolute;
@@ -126,7 +94,7 @@ button {
 
 .modal-close:hover,
 .modal-close:focus {
-  color: black;
+  color: var(--dark-bg);
   text-decoration: none;
   cursor: pointer;
 }

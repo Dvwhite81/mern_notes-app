@@ -1,0 +1,10 @@
+#sidebar {
+  align-items: center;
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  display: flex;
+  flex-direction: column;
+  height: var(--main-height);
+  position: absolute;
+  width: var(--sidebar-width);
+}

@@ -23,7 +23,7 @@ const verifyJWT = (req, res, next) => {
     req.user = {};
     req.user.id = decoded.id;
     req.user.username = decoded.username;
-    req.user.recipes = decoded.recipes;
+    req.user.notes = decoded.notes;
     next();
   });
 };

@@ -12,7 +12,7 @@ const urlEncodedParser = bodyParser.urlencoded({ extended: false });
 app.use(bodyParser.json(), urlEncodedParser);
 app.use(cors());
 
-const dbURI = process.env.MONGODB_URI;
+const dbURI = process.env.MONGO_DB;
 const PORT = process.env.PORT;
 
 mongoose.connect(dbURI)
